@@ -1,0 +1,37 @@
+{
+	"name": "Raoni Octopus (Vue)",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {}
+	},
+	"remoteUser": "node",
+	"postCreateCommand": "fish -c 'fisher install pure-fish/pure'",
+	"postStartCommand": "npm i",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"EditorConfig.EditorConfig",
+				"mhutchie.git-graph",
+				"naumovs.color-highlight",
+				"dbaeumer.vscode-eslint",
+				"christian-kohler.path-intellisense",
+				"vunguyentuan.vscode-postcss",
+				"esbenp.prettier-vscode",
+				"rvest.vs-code-prettier-eslint",
+				"jock.svg",
+				"bradlc.vscode-tailwindcss",
+				"Vue.volar",
+				"znck.vue"
+			]
+		}
+	},
+	"mounts": [
+		{
+			"type": "bind",
+			"source": "${localEnv:HOME}/.ssh",
+			"target": "/home/node/.ssh"
+		}
+	]
+}
